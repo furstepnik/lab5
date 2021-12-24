@@ -17,8 +17,8 @@ public class ActorCache extends AbstractActor {
                         ActorRef.noSender()
                 )
         ).match(
-
-        )
-
+                MessageCache.class,
+                messageCache -> store.put(messageCache.getUrl(), messageCache.getTime())
+        ).build();
     }
 }
