@@ -73,7 +73,8 @@ public class FlowCreator {
                             }
                         }
                 )).map(resultPair -> {
-                    
+                    cache.tell(new MessageCache(resultPair.first(), resultPair.second()), ActorRef.noSender());
+
 
     }
 }
