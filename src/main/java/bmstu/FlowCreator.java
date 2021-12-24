@@ -8,6 +8,9 @@ public class FlowCreator {
     public FlowCreator() {}
     public static Flow<HttpRequest, HttpResponse, NotUsed>
                     createFlow(ActorMaterializer materializer, ActorRef cache) throws ParseArgException {
-        
+        return Flow.of(HttpRequest.class).map(
+                req -> {
+                    Query query = req.getUri().query();
+                    String url;
     }
 }
