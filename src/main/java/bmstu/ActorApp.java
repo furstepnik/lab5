@@ -18,6 +18,11 @@ public class ActorApp {
             final CompletionStage<ServerBinding> binding = http.bindAndHandle(routeFlow, ConnectHttp.toHost(HOST, PORT), materializer);
             System.out.println("Serer online at http://localhost:8080/\nPress RETURN to stop...");
             System.in.read();
+            binding.thenCompose(
+                    ServerBinding::unbind
+            ).thenAccept(
+                    unbound -> system.terminate()
+            );
             
         }
     }
