@@ -1,2 +1,4 @@
-package bmstu;public class ActorApp {
+package bmstu;
+
+public class ActorApp {
 }
