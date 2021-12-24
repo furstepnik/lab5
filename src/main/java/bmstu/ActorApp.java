@@ -6,6 +6,6 @@ public class ActorApp {
 
     public static void main (String[] args) {
         ActorSystem system = ActorSystem.create("routes");
-        
+        ActorRef cache = system.actorOf(Props.create(ActorCache.class));
     }
 }
