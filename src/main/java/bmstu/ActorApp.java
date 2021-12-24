@@ -32,7 +32,6 @@ public class ActorApp {
             ).thenAccept(
                     unbound -> system.terminate()
             );
-
         }
     }
 }
