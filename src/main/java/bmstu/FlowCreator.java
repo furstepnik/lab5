@@ -30,6 +30,11 @@ public class FlowCreator {
                     }
                 }
         ).mapAsync(Number, req ->
-                        
+                Patterns.ask(cache, new Message(req.first()), Duration.ofSeconds(DURATION)).thenCompose(
+                        res -> {
+                            if ((long) res >= 0) {
+                                
+                            }
+                        }
     }
 }
