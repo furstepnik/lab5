@@ -39,7 +39,8 @@ public class FlowCreator {
                                         .mapConcat(pair ->
                                                 new ArrayList<>(Collections.nCopies(pair.second(), pair.first())))
                                         .mapAsync(req.second(), url -> {
-                                            
+                                            long initTime = System.currentTimeMillis();
+                                            Request request = Dsl.get(url).build();
                                         }
                             }
                         }
