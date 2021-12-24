@@ -5,5 +5,6 @@ public class FlowCreator {
     private static final String COUNT = "count";
     private static final int NUMBER = 10;
     private static final int DURATION = 5;
+    public FlowCreator() {}
     
 }
