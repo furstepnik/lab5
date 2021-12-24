@@ -35,7 +35,12 @@ public class FlowCreator {
                             if ((long) res >= 0) {
                                 return CompletableFuture.completedFuture(new Pair<>(req.first(), (long)res));
                             } else {
-                                
+                                Sink<Pair<String, Integer>, CompletionStage<Long>> sink = Flow.<Pair<String, Integer>>create()
+                                        .mapConcat(pair ->
+                                                new ArrayList<>(Collections.nCopies(pair.second(), pair.first())))
+                                        .mapAsync(req.second(), url -> {
+                                            
+                                        }
                             }
                         }
     }
