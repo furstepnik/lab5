@@ -26,7 +26,10 @@ public class FlowCreator {
                             throw new ParseArgException("Can not parse value of count");
                         }
                     } else {
-                        
+                        throw new ParseArgException("No count parameter");
                     }
+                }
+        ).mapAsync(Number, req ->
+                        
     }
 }
