@@ -14,6 +14,7 @@ public class ActorApp {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow;
         try {
+            routeFlow = FlowCreator.createFlow(materializer, cache);
             
         }
     }
