@@ -33,6 +33,8 @@ public class FlowCreator {
                 Patterns.ask(cache, new Message(req.first()), Duration.ofSeconds(DURATION)).thenCompose(
                         res -> {
                             if ((long) res >= 0) {
+                                return CompletableFuture.completedFuture(new Pair<>(req.first(), (long)res));
+                            } else {
                                 
                             }
                         }
