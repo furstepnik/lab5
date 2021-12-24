@@ -35,7 +35,8 @@ public class ActorApp {
                     unbound -> system.terminate()
             );
         } catch (ParseArgException | IOException e) {
-            
+            System.out.println(e.getMessage());
+            System.exit(-1);
         }
     }
 }
