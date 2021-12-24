@@ -1,2 +1,4 @@
-package bmstu;public class ParseArgException {
+package bmstu;
+
+public class ParseArgException {
 }
