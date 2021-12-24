@@ -13,7 +13,12 @@ public class ActorCache extends AbstractActor {
         return receiveBuilder().match(
                 Message.class,
                 message -> sender().tell(
-                        
+                        store.getOrDefault(message.getUrl(), (long) -1.0),
+                        ActorRef.noSender()
+                )
+        ).match(
+
+        )
 
     }
 }
