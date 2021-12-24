@@ -79,7 +79,7 @@
         </dependency>
         <dependency>
             <groupId>org.slf4</groupId>
-            <artifactId>async-http-client</artifactId>
+            <artifactId>slf4j-simple</artifactId>
             <version>2.10.4</version>
         </dependency>
 
