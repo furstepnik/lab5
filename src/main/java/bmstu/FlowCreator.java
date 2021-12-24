@@ -23,8 +23,10 @@ public class FlowCreator {
                             count = Integer.parseInt(query.get(COUNT).get());
                             return new Pair<>(url, count);
                         } catch (NumberFormatException e) {
-                            
+                            throw new ParseArgException("Can not parse value of count");
                         }
+                    } else {
+                        
                     }
     }
 }
