@@ -44,7 +44,11 @@ public class FlowCreator {
                                             CompletableFuture<Response> resp = Dsl.asyncHttpClient().executeRequest(request).toCompletableFuture();
                                             return resp.thenCompose(response -> CompletableFuture.completedFuture((int) (System.currentTimeMillis() - initTime)));
                                         }).toMat(Sink.fold(0L, (Function2<Long, Integer, Long>) Long::sum), Keep.right());
-                                
+                                return Source.from(Collections.singletonList(req))
+                                        .toMat(sink, Keep.right())
+                                        .run(materializer)
+                                        .thenApply(s ->
+                                                new Pair<>(req.first(), s / req.second()));
                             }
                         }
     }
