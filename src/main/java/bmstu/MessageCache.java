@@ -1,2 +1,4 @@
-package bmstu;public class MessageCache {
+package bmstu;
+
+public class MessageCache {
 }
