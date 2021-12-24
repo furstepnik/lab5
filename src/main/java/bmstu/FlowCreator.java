@@ -12,5 +12,14 @@ public class FlowCreator {
                 req -> {
                     Query query = req.getUri().query();
                     String url;
+                    if (query.get(URL).isPresent()) {
+                        url = query.get(URL).get();
+                    } else {
+                        throw new ParseArgException("No URL parameters");
+                    }
+                    int count;
+                    if (query.get(Count).isPresent()) {
+                        
+                    }
     }
 }
