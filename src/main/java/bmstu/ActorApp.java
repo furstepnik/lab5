@@ -12,6 +12,8 @@ import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
+import java.io.IOException;
+
 public class ActorApp {
     private static final String HOST = "localhost";
     private static final int PORT = 8080;
@@ -32,6 +34,8 @@ public class ActorApp {
             ).thenAccept(
                     unbound -> system.terminate()
             );
+        } catch (ParseArgException | IOException e) {
+            
         }
     }
 }
