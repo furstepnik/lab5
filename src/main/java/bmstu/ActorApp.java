@@ -15,6 +15,7 @@ public class ActorApp {
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow;
         try {
             routeFlow = FlowCreator.createFlow(materializer, cache);
+            final CompletionStage<ServerBinding> binding = http.bindAndHandle(routeFlow, ConnectHttp.toHost(HOST, PORT), materializer);
             
         }
     }
